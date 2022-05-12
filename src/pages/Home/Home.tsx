@@ -96,8 +96,7 @@ const products = [
     
 
 const Home: React.FC = () => {
-
-    const [codeId, setCodeID] = useState('');
+    
     const [productName, setProductName]  = useState(String);
     const [productPrice, setProductPrice]  = useState(Number);
     const [productAmount, setProductAmount]  = useState(Number);
@@ -141,10 +140,10 @@ const Home: React.FC = () => {
         let countItems = 0;
         let countBalance = 0;
 
-        _.forEach(productSelect,(values,idx)=>{
+        _.forEach(productSelect,(values)=>{
             let product = products.filter((item:any) => item.id === values.id)[0];
-            if(product){
 
+            if(product){
                 countItems += values.count
                 total += product.price * values.count ;   
 
